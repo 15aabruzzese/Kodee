@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext } from "next"
-import Head from "next/head"
+import Head from "next/head";
+import Header from "../components/NavBar/Header";
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../lp-items"
 
@@ -15,18 +16,17 @@ export default function Web() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <title>Next.js Enterprise Boilerplate</title>
+        <title>Next.js, Docker, GitHub Actions Showcase </title>
       </Head>
+      <Header />
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js Enterprise Boilerplate
+              Next.js DevOps Showcase
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
+              This application is to show some of my knowledge to potential employers and future team members!
             </p>
             <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
               Get started
@@ -41,6 +41,13 @@ export default function Web() {
         </div>
       </section>
       <section className="bg-white dark:bg-gray-900">
+      <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
+        <div className="mx-auto place-self-center">
+          <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
+            Current Skill Set
+          </h1>
+        </div>
+      </div>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LP_GRID_ITEMS.map((singleItem) => (
