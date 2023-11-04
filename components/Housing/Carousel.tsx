@@ -26,21 +26,6 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
     }
   };
 
-  const scrollToCenterIndex = (index: number) => {
-    if (containerRef.current) {
-      const cardWidth = containerRef.current.offsetWidth / itemsPerPage;
-      const newScrollLeft = cardWidth * index - cardWidth * (itemsPerPage / 2);
-      containerRef.current.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
-    }
-  };
-
-  const handleCardClick = (index: number) => {
-    const newCenterIndex = Math.floor(index / itemsPerPage) * itemsPerPage + Math.floor(itemsPerPage / 2);
-    scrollToCenterIndex(newCenterIndex);
-    setCenterIndex(newCenterIndex);
-    setCurrentPage(Math.floor(index / itemsPerPage));
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       if (scrollTimeout !== null) {
@@ -92,7 +77,6 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           return (
             <div
               key={index}
-              onClick={() => handleCardClick(index)}
               className="flex-none snap-center transition-transform duration-300"
               style={{
                 marginBottom: '33px',
