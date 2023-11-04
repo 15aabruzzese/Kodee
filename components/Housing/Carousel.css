@@ -1,0 +1,26 @@
+.carousel-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-track {
+    display: flex;
+    will-change: transform;
+  }
+  
+  .carousel-card {
+    flex: none;
+    margin-right: 20px; /* Adjust space between cards */
+    /* add more styles for the card */
+  }
+  
+  .pagination-bullet {
+    margin: 0 4px;
+    cursor: pointer;
+    /* add more styles for the bullet */
+  }
+  
+  .pagination-bullet.active {
+    /* styles for active bullet */
+  }

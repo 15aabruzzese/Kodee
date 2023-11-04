@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../components/NavBar/Header";
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../lp-items"
+import Carousel from "components/Housing/Carousel";
 
 export default function Web() {
   return (
@@ -39,7 +40,9 @@ export default function Web() {
             </Button>
           </div>
         </div>
+        <MainCarousel/>
       </section>
+      
       <section className="bg-white dark:bg-gray-900">
       <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
         <div className="mx-auto place-self-center">
@@ -64,6 +67,49 @@ export default function Web() {
       </section>
     </>
   )
+}
+
+export const MainCarousel = () =>{
+  const carouselItems = [
+    {
+      title: 'Card Title 1',
+      description: 'This is the card content.',
+      imageUrl: 'path-to-image-1.jpg',
+    },
+    {
+      title: 'Card Title 2',
+      description: 'This is the card content.',
+      imageUrl: 'path-to-image-1.jpg',
+    },
+    {
+      title: 'Card Title 3',
+      description: 'This is the card content.',
+      imageUrl: 'path-to-image-1.jpg',
+    },
+    {
+      title: 'Card Title 4',
+      description: 'This is the card content.',
+      imageUrl: 'path-to-image-1.jpg',
+    },
+    {
+      title: 'Card Title 5',
+      description: 'This is the card content.',
+      imageUrl: 'path-to-image-1.jpg',
+    },
+    {
+      title: 'Card Title 6',
+      description: 'This is the card content.',
+      imageUrl: 'path-to-image-1.jpg',
+    },
+    // ... more ca
+    // ... more card items
+  ];
+
+  return (
+    <div className="App">
+      <Carousel items={carouselItems} />
+    </div>
+  );
 }
 
 export async function getServerSideProps({ req, res }: GetServerSidePropsContext) {
