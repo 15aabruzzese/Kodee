@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Dropdown from './Dropdown';
 import Sidebar from './Sidebar';
 
-type HeaderState = 'home' | 'portfolio' | 'career';
+type HeaderState = 'home' | 'projects' | 'skills';
 
 const Header: React.FC = () => {
   const [activeTab, setActiveTab] = useState<HeaderState>('home');
@@ -42,11 +42,14 @@ const Header: React.FC = () => {
             </div>
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-1">
-              <button onClick={() => handleTabClick('portfolio')} className={`py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300 ${activeTab === 'portfolio' ? 'text-green-500 border-b-4 border-green-500' : ''}`}>
-                Portfolio
+              <button onClick={() => handleTabClick('home')} className={`py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300 ${activeTab === 'home' ? 'text-green-500 border-b-4 border-green-500' : ''}`}>
+                Home
               </button>
-              <button onClick={() => handleTabClick('career')} className={`py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300 ${activeTab === 'career' ? 'text-green-500 border-b-4 border-green-500' : ''}`}>
-                Career
+              <button onClick={() => handleTabClick('skills')} className={`py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300 ${activeTab === 'skills' ? 'text-green-500 border-b-4 border-green-500' : ''}`}>
+                Skills
+              </button>
+              <button onClick={() => handleTabClick('projects')} className={`py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300 ${activeTab === 'projects' ? 'text-green-500 border-b-4 border-green-500' : ''}`}>
+                Projects
               </button>
             </div>
           </div>

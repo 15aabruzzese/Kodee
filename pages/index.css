@@ -1,0 +1,12 @@
+#animation-container {
+    /* ...other styles... */
+    background-color: #f0f0f0; /* Light grey background */
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden; /* Hide bars that overflow during sorting */
+  }
+  .bar {
+    width: calc(100% / 40); /* Initial width to support at least 40 bars */
+    background-color: #333; /* Dark grey bars */
+    margin-right: 2px; /* Space out the bars */
+  }

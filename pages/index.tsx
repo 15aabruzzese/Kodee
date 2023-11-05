@@ -3,9 +3,19 @@ import Head from "next/head";
 import Header from "../components/NavBar/Header";
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../lp-items"
-import Carousel from "components/Housing/Carousel";
+import Carousel from "components/Containers/Carousel";
+import SortingVisualizer from "components/Visuals/SortingVisualizer";
+import { useRef } from "react";
 
 export default function Web() {
+
+  const sortFunctionRef = useRef<() => void>();
+  
+  const triggerSort = () => {
+    if (sortFunctionRef.current) {
+      sortFunctionRef.current();
+    }
+  };
   return (
     <>
       <Head>
@@ -20,34 +30,39 @@ export default function Web() {
         <title>Next.js, Docker, GitHub Actions Showcase </title>
       </Head>
       <Header />
+      <div id="animation-container">
+        <SortingVisualizer numBars={50}  />
+      </div>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js DevOps Showcase
+              Kode&#275;
             </h1>
+            <h2 style={{fontSize:"230%" ,marginTop: '10%',}}>Move at the speed of code.</h2>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              This application is to show some of my knowledge to potential employers and future team members!
+              The multi-instance chatGPT coding platform
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
-              Get started
+            <div style={{fontSize:"230%" ,marginTop: '20px',}}>
+            <Button className="mr-3" onClick={triggerSort} href={""} style={{width: '150px'}}>
+              Login
             </Button>
-            <Button
+            <Button style={{width: '150px'}} 
               href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
               intent="secondary"
             >
-              Deploy Now
+              Sign-up
             </Button>
+            </div>
           </div>
         </div>
         <MainCarousel/>
       </section>
-      
       <section className="bg-white dark:bg-gray-900">
       <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
         <div className="mx-auto place-self-center">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-            Current Skill Set
+            Learn More
           </h1>
         </div>
       </div>
@@ -72,17 +87,17 @@ export default function Web() {
 export const MainCarousel = () =>{
   const carouselItems = [
     {
-      title: 'Card Title 1',
-      description: 'This is the card content.',
+      title: 'Plan Your Project',
+      description: 'Helps you map application requirments from the ground up',
       imageUrl: 'path-to-image-1.jpg',
     },
     {
-      title: 'Card Title 2',
-      description: 'This is the card content.',
+      title: 'Design each piece',
+      description: 'Create components or classes to import your application',
       imageUrl: 'path-to-image-1.jpg',
     },
     {
-      title: 'Card Title 3',
+      title: 'Assemble your application',
       description: 'This is the card content.',
       imageUrl: 'path-to-image-1.jpg',
     },
@@ -101,8 +116,6 @@ export const MainCarousel = () =>{
       description: 'This is the card content.',
       imageUrl: 'path-to-image-1.jpg',
     },
-    // ... more ca
-    // ... more card items
   ];
 
   return (

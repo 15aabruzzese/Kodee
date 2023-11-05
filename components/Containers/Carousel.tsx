@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
       }
       const newTimeout = setTimeout(() => {
         updateCenterIndex();
-      }, 150);
+      }, 50);
       setScrollTimeout(newTimeout);
     };
 
