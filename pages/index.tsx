@@ -1,11 +1,13 @@
 import { GetServerSidePropsContext } from "next"
-import Head from "next/head";
-import Header from "../components/NavBar/Header";
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../lp-items"
+import { useRef } from "react";
+import Head from "next/head";
+import Header from "../components/NavBar/Header";
 import Carousel from "components/Containers/Carousel";
 import SortingVisualizer from "components/Visuals/SortingVisualizer";
-import { useRef } from "react";
+import LeetCodeCard from "components/Cards/LeetCode";
+
 
 export default function Web() {
 
@@ -32,6 +34,9 @@ export default function Web() {
       <Header />
       <div id="animation-container">
         <SortingVisualizer numBars={50}  />
+      </div>
+      <div>
+        <LeetCodeCard/>
       </div>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
